@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iglesia Solidaria | Donaciones a la comunidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2d0b1fac5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-[var(--bg-soft)] text-color1 font-sans">
+  <header class="sticky top-0 z-50 border-b border-[var(--border-soft)] bg-white/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <a href="index.html" class="text-lg font-semibold tracking-tight text-color1">Iglesia Solidaria</a>
+      <nav class="flex flex-wrap items-center gap-3 text-sm font-semibold text-color2">
+        <a href="index.html" class="nav-link rounded-full px-4 py-2">Inicio</a>
+        <a href="donate.html" class="nav-link rounded-full px-4 py-2">Donar</a>
+        <a href="#contact" class="nav-link rounded-full px-4 py-2">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="heroCarousel" class="relative h-[calc(100vh-76px)] overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="carouselSlide slide-visible relative h-full w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507386175287-1bfddbdd5cb3?auto=format&fit=crop&w=1200&q=80');">
+          <div class="absolute inset-0 bg-gradient-to-t from-[rgba(82,46,39,0.92)] via-[rgba(82,46,39,0.5)] to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white">
+            <p class="text-sm uppercase tracking-[0.32em] text-[#f4d19a]">Noticias de la iglesia</p>
+            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Donaciones que transforman templos y vidas.</h1>
+            <p class="max-w-2xl text-base leading-7 text-[#f4d19a]/90">Mira cómo la comunidad recibe ayuda mediante proyectos reales de la iglesia.</p>
+          </div>
+          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full bg-white/90 p-3 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Persona en iglesia" class="h-14 w-14 rounded-full border border-white object-cover" />
+            <div class="text-left">
+              <p class="text-sm font-semibold text-color1">María, voluntaria</p>
+              <p class="text-xs text-color3">Coordina la campaña social</p>
+            </div>
+          </div>
+        </div>
+        <div class="carouselSlide slide-hidden relative h-full w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1526481280695-3bfa7568a3d3?auto=format&fit=crop&w=1200&q=80');">
+          <div class="absolute inset-0 bg-gradient-to-t from-[rgba(82,46,39,0.92)] via-[rgba(82,46,39,0.5)] to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white">
+            <p class="text-sm uppercase tracking-[0.32em] text-[#f4d19a]">Restauración del templo</p>
+            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">El templo vuelve a brillar gracias a la ayuda.</h1>
+            <p class="max-w-2xl text-base leading-7 text-[#f4d19a]/90">Observa las fotos del antes y después de nuestra renovación.</p>
+          </div>
+          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full bg-white/90 p-3 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Líder comunitario" class="h-14 w-14 rounded-full border border-white object-cover" />
+            <div class="text-left">
+              <p class="text-sm font-semibold text-color1">Pedro, líder</p>
+              <p class="text-xs text-color3">Comparte los avances</p>
+            </div>
+          </div>
+        </div>
+        <div class="carouselSlide slide-hidden relative h-full w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80');">
+          <div class="absolute inset-0 bg-gradient-to-t from-[rgba(82,46,39,0.92)] via-[rgba(82,46,39,0.5)] to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white">
+            <p class="text-sm uppercase tracking-[0.32em] text-[#f4d19a]">Impacto comunitario</p>
+            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Ayuda real para familias de fe.</h1>
+            <p class="max-w-2xl text-base leading-7 text-[#f4d19a]/90">Evidencias fotográficas de donaciones a iglesias y comedores.</p>
+          </div>
+          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full bg-white/90 p-3 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80" alt="Donante" class="h-14 w-14 rounded-full border border-white object-cover" />
+            <div class="text-left">
+              <p class="text-sm font-semibold text-color1">Sofía, donante</p>
+              <p class="text-xs text-color3">Apoya la obra social</p>
+            </div>
+          </div>
+        </div>
+        <div class="carouselSlide slide-hidden relative h-full w-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1512747770445-0819f149e55f?auto=format&fit=crop&w=1200&q=80');">
+          <div class="absolute inset-0 bg-gradient-to-t from-[rgba(82,46,39,0.92)] via-[rgba(82,46,39,0.5)] to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white">
+            <p class="text-sm uppercase tracking-[0.32em] text-[#f4d19a]">Visión comunitaria</p>
+            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Un proyecto colectivo de fe.</h1>
+            <p class="max-w-2xl text-base leading-7 text-[#f4d19a]/90">Donaciones para remodelar el templo y ayudar a su comunidad.</p>
+          </div>
+          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full bg-white/90 p-3 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Voluntario" class="h-14 w-14 rounded-full border border-white object-cover" />
+            <div class="text-left">
+              <p class="text-sm font-semibold text-color1">Andrés, voluntario</p>
+              <p class="text-xs text-color3">Comparte historias de la iglesia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute inset-x-0 bottom-6 flex justify-center gap-3">
+        <button type="button" class="carouselDot h-3 w-3 rounded-full bg-white/90 transition" data-index="0"></button>
+        <button type="button" class="carouselDot h-3 w-3 rounded-full bg-white/30 transition" data-index="1"></button>
+        <button type="button" class="carouselDot h-3 w-3 rounded-full bg-white/30 transition" data-index="2"></button>
+        <button type="button" class="carouselDot h-3 w-3 rounded-full bg-white/30 transition" data-index="3"></button>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 py-10">
+      <section class="mb-10 rounded-3xl border border-[var(--border-soft)] bg-white/90 p-6 shadow-sm backdrop-blur-sm">
+        <div class="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+          <div class="space-y-5">
+            <p class="text-sm uppercase tracking-[0.32em] text-color4">Presentación</p>
+            <h2 class="text-3xl font-semibold text-color1">Apoyamos a iglesias con impacto visual y transparencia.</h2>
+            <p class="max-w-3xl text-base leading-7 text-color2">Este ejemplo presenta lo que la iglesia recibe, cómo se utiliza el dinero y las historias que cambian vidas.</p>
+          </div>
+          <div class="rounded-3xl bg-[var(--color5)] p-6 text-[var(--color2)] shadow-sm">
+            <p class="text-sm uppercase tracking-[0.32em]">Temática</p>
+            <h3 class="mt-3 text-2xl font-semibold">Iglesias y comunidad</h3>
+            <p class="mt-3 text-sm leading-6">Un sitio de presentación claro para mostrar donaciones, obras y resultados.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+        <div class="space-y-6">
+          <article class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <p class="text-xs uppercase tracking-[0.32em] text-color4">Reportaje</p>
+                <h2 class="mt-2 text-2xl font-semibold text-color1">Renovación del templo</h2>
+              </div>
+              <span class="rounded-2xl bg-[var(--color5)] px-3 py-2 text-sm text-color2">Iglesia San Pedro</span>
+            </div>
+            <div class="grid gap-4 md:grid-cols-2">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80" alt="Renovación de iglesia" class="h-56 w-full rounded-3xl object-cover" />
+              <div class="space-y-4">
+                <p class="text-color2">Las donaciones permitieron reparar el techo, renovar bancos y mejorar el acceso para todos los miembros de la comunidad.</p>
+                <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                  <p class="font-semibold text-color1">Resultado</p>
+                  <p class="mt-2 text-sm">El templo ahora es un espacio más seguro y acogedor para eventos comunitarios.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <p class="text-xs uppercase tracking-[0.32em] text-color4">Blog</p>
+                <h2 class="mt-2 text-2xl font-semibold text-color1">Cómo se utiliza el dinero</h2>
+              </div>
+              <span class="rounded-2xl bg-[var(--color5)] px-3 py-2 text-sm text-color2">Transparencia</span>
+            </div>
+            <div class="space-y-4">
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <p class="font-semibold text-color1">Materiales</p>
+                <p class="mt-2 text-sm">Pintura, madera y herramientas para el mantenimiento del templo.</p>
+              </div>
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <p class="font-semibold text-color1">Apoyo social</p>
+                <p class="mt-2 text-sm">Alimentos y kits para familias en situación de vulnerabilidad.</p>
+              </div>
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <p class="font-semibold text-color1">Eventos</p>
+                <p class="mt-2 text-sm">Jornadas de salud, educación y convivencia comunitaria.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <p class="text-xs uppercase tracking-[0.32em] text-color4">Historias</p>
+                <h2 class="mt-2 text-2xl font-semibold text-color1">Impacto local</h2>
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <p class="font-semibold text-color1">Campaña de invierno</p>
+                <p class="mt-2 text-sm">Repartimos mantas y alimentos a familias del barrio.</p>
+              </div>
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <p class="font-semibold text-color1">Acceso para todos</p>
+                <p class="mt-2 text-sm">Construimos rampas para personas mayores y con movilidad reducida.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="space-y-6">
+          <div class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+            <h2 class="text-2xl font-semibold text-color1">Apoya lo que hacemos</h2>
+            <p class="mt-4 text-color2">Tus aportes mantienen el templo, apoyan a las familias y fortalecen la solidaridad comunitaria.</p>
+            <div class="mt-6 space-y-4">
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <h3 class="font-semibold text-color1">Techos</h3>
+                <p class="mt-2 text-sm">Reparaciones que protegen el templo todo el año.</p>
+              </div>
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <h3 class="font-semibold text-color1">Programa social</h3>
+                <p class="mt-2 text-sm">Ayuda directa para quienes más lo necesitan.</p>
+              </div>
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+                <h3 class="font-semibold text-color1">Eventos</h3>
+                <p class="mt-2 text-sm">Actividades de encuentro y bienestar para la comunidad.</p>
+              </div>
+            </div>
+            <a href="donate.html" class="mt-6 inline-flex w-full justify-center rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2">Ir a donar</a>
+          </div>
+
+          <div class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+            <h3 class="text-xl font-semibold text-color1">Noticias recientes</h3>
+            <div class="mt-5 space-y-4">
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4">
+                <p class="font-semibold text-color1">Nuevos bancos donados</p>
+                <p class="mt-2 text-sm text-color3">Renovamos el mobiliario del templo para mayor comodidad.</p>
+              </div>
+              <div class="rounded-3xl bg-[var(--bg-soft)] p-4">
+                <p class="font-semibold text-color1">Capilla iluminada</p>
+                <p class="mt-2 text-sm text-color3">Instalamos luces nuevas para mayor seguridad.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="contact" class="rounded-3xl border border-[var(--border-soft)] bg-white p-6 shadow-sm">
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.32em] text-color4">Contacto</p>
+            <h2 class="text-3xl font-semibold text-color1">Conecta con nuestra comunidad</h2>
+            <p class="text-base leading-7 text-color2">Si deseas apoyar a la iglesia local o saber cómo se utilizan los recursos, escríbenos y te responderemos pronto.</p>
+            <div class="space-y-3 rounded-3xl bg-[var(--bg-soft)] p-5 text-color3">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-envelope mt-1 text-color4"></i>
+                <div>
+                  <p class="font-semibold text-color1">Email</p>
+                  <p>contacto@iglesiasolidaria.org</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-phone mt-1 text-color4"></i>
+                <div>
+                  <p class="font-semibold text-color1">Teléfono</p>
+                  <p>+34 912 345 678</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot mt-1 text-color4"></i>
+                <div>
+                  <p class="font-semibold text-color1">Sede</p>
+                  <p>C/ Esperanza 23, Sevilla, España</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <form id="contactForm" class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-color2">Nombre</label>
+                <input id="contactName" type="text" placeholder="Tu nombre" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-color2">Email</label>
+                <input id="contactEmail" type="email" placeholder="ejemplo@correo.com" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-color2">Mensaje</label>
+                <textarea id="contactMessage" rows="4" placeholder="Deseo apoyar la iglesia..." class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]"></textarea>
+              </div>
+              <button type="submit" class="w-full rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2">Enviar mensaje</button>
+              <p id="contactFeedback" class="min-h-[1.5rem] text-sm text-[#2c7a2a]"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

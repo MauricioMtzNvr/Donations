@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donar | Iglesia Solidaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2d0b1fac5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-[var(--bg-soft)] text-color1 font-sans">
+  <header class="sticky top-0 z-50 border-b border-[var(--border-soft)] bg-white/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <a href="index.html" class="text-lg font-semibold tracking-tight text-color1">Iglesia Solidaria</a>
+      <nav class="flex flex-wrap items-center gap-3 text-sm font-semibold text-color2">
+        <a href="index.html" class="nav-link rounded-full px-4 py-2">Inicio</a>
+        <a href="donate.html" class="nav-link rounded-full bg-[var(--color5)] px-4 py-2 text-color1">Donar</a>
+        <a href="index.html#contact" class="nav-link rounded-full px-4 py-2">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <main class="mx-auto max-w-6xl px-4 py-10">
+    <section class="mb-10 rounded-3xl border border-[var(--border-soft)] bg-white p-8 shadow-sm">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_0.7fr] lg:items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.32em] text-color4">Donar con confianza</p>
+          <h1 class="mt-4 text-4xl font-semibold text-color1">Apoya proyectos sociales de manera segura y transparente.</h1>
+          <p class="mt-4 max-w-2xl text-base leading-7 text-color2">Nuestro sistema simula un proceso de checkout simplificado, validando tarjeta, fecha y CVV antes de confirmar la donación.</p>
+        </div>
+        <div class="rounded-3xl bg-[var(--bg-soft)] p-6 text-color2 shadow-sm">
+          <p class="text-sm uppercase tracking-[0.32em] text-color4">Beneficios</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-color4"></i> Aporta a la restauración del templo</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-color4"></i> Apoya programas sociales y comedores</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-color4"></i> Proceso simulado, claro y confiable</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+      <div class="space-y-6">
+        <div class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+          <h2 class="text-2xl font-semibold text-color1">Tu donación hace la diferencia</h2>
+          <p class="mt-3 text-color2">Selecciona un monto y completa la información de pago en el formulario. Al procesar la donación simulada, el progreso de la causa se actualiza en tiempo real.</p>
+          <div class="mt-6 rounded-3xl bg-[var(--bg-soft)] p-5">
+            <div class="flex justify-between text-sm text-color3">
+              <span>Monto actual</span>
+              <span>$3,400</span>
+            </div>
+            <div class="mt-4 h-3 overflow-hidden rounded-full bg-[rgba(153,98,81,0.16)]">
+              <div class="h-full w-[45%] rounded-full bg-gradient-to-r from-[#996251] to-[#d59874]"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+          <h2 class="text-2xl font-semibold text-color1">Modo seguro</h2>
+          <p class="mt-3 text-color2">Esta demostración muestra un proceso de donación sencillo para apoyar proyectos de iglesia con visibilidad y claridad.</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+              <p class="font-semibold text-color1">Tarjeta</p>
+              <p class="mt-2 text-sm">16 dígitos.</p>
+            </div>
+            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+              <p class="font-semibold text-color1">Expiración</p>
+              <p class="mt-2 text-sm">MM/AA, futura.</p>
+            </div>
+            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+              <p class="font-semibold text-color1">CVV</p>
+              <p class="mt-2 text-sm">3 dígitos.</p>
+            </div>
+            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
+              <p class="font-semibold text-color1">Seguridad</p>
+              <p class="mt-2 text-sm">No se guardan datos reales en esta vista.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
+        <h2 class="text-2xl font-semibold text-color1">Formulario de donación</h2>
+        <form id="donationForm" class="mt-6 space-y-4">
+          <label class="block text-sm font-medium text-color2">Monto a donar</label>
+          <div class="rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1">
+            <span class="text-lg font-semibold">$</span>
+            <input id="donationAmount" type="number" min="10" step="5" value="50" class="w-full bg-transparent text-lg font-semibold outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-color2">Número de tarjeta</label>
+            <input id="cardNumber" type="text" pattern="\d*" maxlength="19" placeholder="1234 5678 9012 3456" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="block text-sm font-medium text-color2">Fecha (MM/AA)</label>
+              <input id="expiryDate" type="text" maxlength="5" placeholder="08/27" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-color2">CVV</label>
+              <input id="cvv" type="text" maxlength="3" placeholder="123" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
+            </div>
+          </div>
+
+          <button type="submit" class="w-full rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2">Simular Donación</button>
+          <p id="donationFeedback" class="min-h-[1.5rem] text-sm text-[#2c7a2a]"></p>
+        </form>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

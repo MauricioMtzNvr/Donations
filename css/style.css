@@ -1,0 +1,105 @@
+:root {
+  color-scheme: light;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color1: #522e27;
+  --color2: #713f35;
+  --color3: #996251;
+  --color4: #d59874;
+  --color5: #f4d19a;
+  --bg-soft: #fbf3ed;
+  --border-soft: #e7d3c8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fbf3ed 0%, #fffaf7 100%);
+}
+
+.text-color1 { color: var(--color1); }
+.text-color2 { color: var(--color2); }
+.text-color3 { color: var(--color3); }
+.text-color4 { color: var(--color4); }
+.text-color5 { color: var(--color5); }
+
+.bg-color1 { background-color: var(--color1); }
+.bg-color2 { background-color: var(--color2); }
+.bg-color3 { background-color: var(--color3); }
+.bg-color4 { background-color: var(--color4); }
+.bg-color5 { background-color: var(--color5); }
+
+button,
+select,
+input,
+textarea {
+  font-family: inherit;
+}
+
+input[type='file'] {
+  border-radius: 1rem;
+}
+
+#donationForm input,
+#donationForm textarea,
+#evidenceForm input,
+#evidenceForm textarea,
+#roleSelect,
+#contactForm input,
+#contactForm textarea {
+  font-family: inherit;
+}
+
+#donationForm input::placeholder,
+#evidenceForm input::placeholder,
+#evidenceForm textarea::placeholder,
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: #99715d;
+}
+
+.nav-link {
+  color: var(--color2);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgba(217, 152, 116, 0.16);
+  color: var(--color1);
+}
+
+.carouselSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.slide-visible {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.slide-hidden {
+  opacity: 0;
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+#donationPanel,
+#adminPanel,
+#superAdminPanel {
+  min-height: 310px;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
