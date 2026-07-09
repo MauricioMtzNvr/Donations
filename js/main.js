@@ -98,8 +98,7 @@ function goToSlide(index) {
     slide.classList.toggle('slide-hidden', i !== activeSlide);
   });
   carouselDots.forEach((dot, i) => {
-    dot.classList.toggle('bg-white/90', i === activeSlide);
-    dot.classList.toggle('bg-white/30', i !== activeSlide);
+    dot.classList.toggle('active', i === activeSlide);
   });
 }
 

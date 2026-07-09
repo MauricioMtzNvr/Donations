@@ -76,19 +76,65 @@ input[type='file'] {
   inset: 0;
   opacity: 0;
   transform: scale(1.03);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
+  filter: brightness(0.82);
+}
+
+.carouselSlide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 8, 7, 0.55) 0%, rgba(10, 8, 7, 0.2) 35%, rgba(10, 8, 7, 0.35) 100%);
 }
 
 .slide-visible {
   opacity: 1;
   transform: scale(1);
   z-index: 1;
+  filter: brightness(1);
 }
 
 .slide-hidden {
   opacity: 0;
   transform: scale(1.03);
   z-index: 0;
+}
+
+.carouselCaption {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.14);
+}
+
+.carouselMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.carouselDot {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.carouselDot.active {
+  background: #f4d19a;
+  transform: scale(1.2);
+}
+
+.carouselControls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  z-index: 10;
 }
 
 #donationPanel,
