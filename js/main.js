@@ -15,10 +15,53 @@ const currentAmount = document.getElementById('currentAmount');
 const evidenceFeed = document.getElementById('evidenceFeed');
 const contactForm = document.getElementById('contactForm');
 const contactFeedback = document.getElementById('contactFeedback');
+const donationCauseSelect = document.getElementById('donationCause');
+const goalAmount = document.getElementById('goalAmount');
 const carouselSlides = Array.from(document.querySelectorAll('.carouselSlide'));
 const carouselDots = Array.from(document.querySelectorAll('.carouselDot'));
+const donationCauseCards = Array.from(document.querySelectorAll('[data-cause-card]'));
+const donationCauseButtons = Array.from(document.querySelectorAll('[data-select-cause]'));
 
-let currentRaised = 3400;
+const donationCauses = {
+  roof: {
+    label: 'Techo principal y estructura',
+    raised: 1200,
+    goal: 2500,
+    statusId: 'cause-status-roof',
+    raisedId: 'cause-raised-roof',
+    goalId: 'cause-goal-roof',
+    progressId: 'cause-progress-roof',
+  },
+  altar: {
+    label: 'Altar y área de oración',
+    raised: 980,
+    goal: 1800,
+    statusId: 'cause-status-altar',
+    raisedId: 'cause-raised-altar',
+    goalId: 'cause-goal-altar',
+    progressId: 'cause-progress-altar',
+  },
+  community: {
+    label: 'Capilla comunitaria',
+    raised: 760,
+    goal: 1500,
+    statusId: 'cause-status-community',
+    raisedId: 'cause-raised-community',
+    goalId: 'cause-goal-community',
+    progressId: 'cause-progress-community',
+  },
+  access: {
+    label: 'Accesos e iluminación interior',
+    raised: 460,
+    goal: 1200,
+    statusId: 'cause-status-access',
+    raisedId: 'cause-raised-access',
+    goalId: 'cause-goal-access',
+    progressId: 'cause-progress-access',
+  },
+};
+
+let currentRaised = Object.values(donationCauses).reduce((sum, cause) => sum + cause.raised, 0);
 let currentGoal = 7500;
 let activeSlide = 0;
 let carouselInterval = null;
@@ -101,6 +144,43 @@ function showMessage(element, message, success = true) {
   if (!element) return;
   element.textContent = message;
   element.style.color = success ? '#2c7a2a' : '#b91c1c';
+}
+
+function formatDonationGoal(value) {
+  return formatCurrency(value);
+}
+
+function updateDonationSummary() {
+  if (currentAmount) currentAmount.textContent = formatCurrency(currentRaised);
+  if (goalAmount) goalAmount.textContent = formatDonationGoal(currentGoal);
+  animateProgress(currentRaised);
+
+  Object.entries(donationCauses).forEach(([key, cause]) => {
+    const raisedElement = document.getElementById(cause.raisedId);
+    const goalElement = document.getElementById(cause.goalId);
+    const progressElement = document.getElementById(cause.progressId);
+    const statusElement = document.getElementById(cause.statusId);
+    const raisedPercentage = Math.min((cause.raised / cause.goal) * 100, 100);
+
+    if (raisedElement) raisedElement.textContent = formatCurrency(cause.raised);
+    if (goalElement) goalElement.textContent = formatCurrency(cause.goal);
+    if (progressElement) progressElement.style.width = `${raisedPercentage}%`;
+    if (statusElement) {
+      const isComplete = cause.raised >= cause.goal;
+      statusElement.textContent = isComplete ? 'Meta alcanzada' : 'En progreso';
+      statusElement.classList.toggle('is-complete', isComplete);
+    }
+
+    const card = donationCauseCards.find(element => element.dataset.causeCard === key);
+    if (card) {
+      card.classList.toggle('is-complete', cause.raised >= cause.goal);
+    }
+  });
+}
+
+function setDonationCause(causeKey) {
+  if (!donationCauseSelect || !donationCauses[causeKey]) return;
+  donationCauseSelect.value = causeKey;
 }
 
 function goToSlide(index) {
@@ -189,6 +269,8 @@ if (donationForm) {
     event.preventDefault();
 
     const amount = Number(document.getElementById('donationAmount').value);
+    const causeKey = donationCauseSelect && donationCauses[donationCauseSelect.value] ? donationCauseSelect.value : 'roof';
+    const cause = donationCauses[causeKey];
     const cardNumber = cardNumberInput ? cardNumberInput.value : '';
     const expiryDate = expiryInput ? expiryInput.value : '';
     const cvv = cvvInput ? cvvInput.value : '';
@@ -206,15 +288,32 @@ if (donationForm) {
       return showMessage(donationFeedback, 'CVV inválido. Ingrese 3 dígitos.', false);
     }
 
-    currentRaised += amount;
-    setProgress(currentRaised);
-    showMessage(donationFeedback, `¡Donación simulada exitosa! Has aportado ${formatCurrency(amount)}.`);
+    const previousRaised = cause.raised;
+    cause.raised += amount;
+    currentRaised = Object.values(donationCauses).reduce((sum, donationCause) => sum + donationCause.raised, 0);
+    updateDonationSummary();
+
+    const reachedGoalNow = previousRaised < cause.goal && cause.raised >= cause.goal;
+    showMessage(
+      donationFeedback,
+      reachedGoalNow
+        ? `¡Meta alcanzada en ${cause.label}! Tu aporte de ${formatCurrency(amount)} se sumó al total recaudado.`
+        : `¡Donación simulada exitosa para ${cause.label}! Has aportado ${formatCurrency(amount)}.`
+    );
 
     setTimeout(() => {
       if (donationFeedback) donationFeedback.textContent = '';
     }, 5000);
   });
 }
+
+donationCauseButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const causeKey = button.dataset.selectCause;
+    setDonationCause(causeKey);
+    donationCauseSelect?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+});
 
 if (evidenceImage) {
   evidenceImage.addEventListener('change', event => {
@@ -299,7 +398,7 @@ if (roleSelect) {
   updateRole(roleSelect.value);
 }
 
-setProgress(currentRaised);
+updateDonationSummary();
 
 if (carouselSlides.length) {
   goToSlide(0);

@@ -22,95 +22,250 @@
       </nav>
     </div>
   </header>
-  <main class="mx-auto max-w-6xl px-4 py-10">
-    <section class="mb-10 rounded-3xl border border-[var(--border-soft)] bg-white p-8 shadow-sm">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_0.7fr] lg:items-center">
-        <div>
-          <p class="text-sm uppercase tracking-[0.32em] text-color4">Donar con confianza</p>
-          <h1 class="mt-4 text-4xl font-semibold text-color1">Apoya proyectos sociales de manera segura y transparente.</h1>
-          <p class="mt-4 max-w-2xl text-base leading-7 text-color2">Nuestro sistema simula un proceso de checkout simplificado, validando tarjeta, fecha y CVV antes de confirmar la donación.</p>
+  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 space-y-8">
+    <section class="donationHeroPanel overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-white/85 shadow-[0_24px_80px_rgba(82,46,39,0.08)] backdrop-blur-md">
+      <div class="grid gap-0 lg:grid-cols-[1.08fr_0.92fr]">
+        <div class="p-7 sm:p-10">
+          <p class="sectionEyebrow">Donar con confianza</p>
+          <h1 class="sectionTitle mt-4">Elige un espacio del templo y ayuda a alcanzar su meta.</h1>
+          <p class="sectionLead mt-4">Cada donación se asigna a un destino concreto, actualiza su progreso y también incrementa el total recaudado de la comunidad.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="pillTag">Metas claras</span>
+            <span class="pillTag">Aportes por causa</span>
+            <span class="pillTag">Paleta cálida</span>
+          </div>
         </div>
-        <div class="rounded-3xl bg-[var(--bg-soft)] p-6 text-color2 shadow-sm">
-          <p class="text-sm uppercase tracking-[0.32em] text-color4">Beneficios</p>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li class="flex gap-3"><i class="fa-solid fa-check text-color4"></i> Aporta a la restauración del templo</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-color4"></i> Apoya programas sociales y comedores</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check text-color4"></i> Proceso simulado, claro y confiable</li>
-          </ul>
+        <div class="heroSummaryBoard border-t border-[var(--border-soft)] bg-[linear-gradient(180deg,rgba(244,209,154,0.24),rgba(251,243,237,0.94))] p-7 sm:p-10 lg:border-l lg:border-t-0">
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <p class="text-sm uppercase tracking-[0.32em] text-color4">Total recaudado</p>
+              <p id="currentAmount" class="mt-3 text-4xl font-semibold tracking-tight text-color1">$3,400</p>
+            </div>
+            <div class="rounded-full bg-white/70 px-4 py-2 text-sm font-semibold text-color2 shadow-sm">
+              Meta global: <span id="goalAmount">$7,500</span>
+            </div>
+          </div>
+          <div class="mt-6 h-3 overflow-hidden rounded-full bg-[rgba(153,98,81,0.16)]">
+            <div id="progressBar" class="h-full w-[45%] rounded-full bg-gradient-to-r from-[#996251] to-[#d59874]"></div>
+          </div>
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            <div class="metricCard">
+              <span>Asignadas</span>
+              <strong>4</strong>
+              <p>Espacios del templo abiertos para apoyar.</p>
+            </div>
+            <div class="metricCard">
+              <span>Meta media</span>
+              <strong>$1.8k</strong>
+              <p>Objetivo promedio por proyecto.</p>
+            </div>
+            <div class="metricCard">
+              <span>Estado</span>
+              <strong>Activo</strong>
+              <p>Las causas se actualizan en tiempo real.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+    <section class="grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
       <div class="space-y-6">
-        <div class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
-          <h2 class="text-2xl font-semibold text-color1">Tu donación hace la diferencia</h2>
-          <p class="mt-3 text-color2">Selecciona un monto y completa la información de pago en el formulario. Al procesar la donación simulada, el progreso de la causa se actualiza en tiempo real.</p>
-          <div class="mt-6 rounded-3xl bg-[var(--bg-soft)] p-5">
-            <div class="flex justify-between text-sm text-color3">
-              <span>Monto actual</span>
-              <span>$3,400</span>
-            </div>
-            <div class="mt-4 h-3 overflow-hidden rounded-full bg-[rgba(153,98,81,0.16)]">
-              <div class="h-full w-[45%] rounded-full bg-gradient-to-r from-[#996251] to-[#d59874]"></div>
+        <article class="causeCard overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-white shadow-[0_20px_60px_rgba(82,46,39,0.08)]" data-cause-card="roof">
+          <div class="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
+            <img src="imgs/iglecia1.jpg" alt="Techo de la iglesia" class="causeImage" />
+            <div class="p-7 sm:p-8">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <p class="sectionEyebrow">Espacio 01</p>
+                <span id="cause-status-roof" class="causeStatus">En progreso</span>
+              </div>
+              <h2 class="sectionTitle mt-4 text-[2rem]">Techo principal y estructura</h2>
+              <p class="sectionLead mt-4">Reforzamos cubiertas, filtraciones y puntos de mantenimiento para proteger el templo durante todo el año.</p>
+              <div class="causeMetaGrid mt-6">
+                <div class="causeMetaCard">
+                  <span>Recaudado</span>
+                  <strong id="cause-raised-roof">$1,200</strong>
+                </div>
+                <div class="causeMetaCard">
+                  <span>Meta</span>
+                  <strong id="cause-goal-roof">$2,500</strong>
+                </div>
+              </div>
+              <div class="mt-6">
+                <div class="progressTrack">
+                  <div id="cause-progress-roof" class="progressFill w-[48%]"></div>
+                </div>
+              </div>
+              <button type="button" class="mt-6 inline-flex items-center justify-center rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2" data-select-cause="roof">Donar a este espacio</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
-          <h2 class="text-2xl font-semibold text-color1">Modo seguro</h2>
-          <p class="mt-3 text-color2">Esta demostración muestra un proceso de donación sencillo para apoyar proyectos de iglesia con visibilidad y claridad.</p>
-          <div class="mt-6 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
-              <p class="font-semibold text-color1">Tarjeta</p>
-              <p class="mt-2 text-sm">16 dígitos.</p>
-            </div>
-            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
-              <p class="font-semibold text-color1">Expiración</p>
-              <p class="mt-2 text-sm">MM/AA, futura.</p>
-            </div>
-            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
-              <p class="font-semibold text-color1">CVV</p>
-              <p class="mt-2 text-sm">3 dígitos.</p>
-            </div>
-            <div class="rounded-3xl bg-[var(--bg-soft)] p-4 text-color3">
-              <p class="font-semibold text-color1">Seguridad</p>
-              <p class="mt-2 text-sm">No se guardan datos reales en esta vista.</p>
+        <article class="causeCard overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-white shadow-[0_20px_60px_rgba(82,46,39,0.08)]" data-cause-card="altar">
+          <div class="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
+            <img src="imgs/iglecia2.jpg" alt="Altar de la iglesia" class="causeImage" />
+            <div class="p-7 sm:p-8">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <p class="sectionEyebrow">Espacio 02</p>
+                <span id="cause-status-altar" class="causeStatus">En progreso</span>
+              </div>
+              <h2 class="sectionTitle mt-4 text-[2rem]">Altar y área de oración</h2>
+              <p class="sectionLead mt-4">Renovación del altar, iluminación focal y mejora del ambiente para la oración y las celebraciones.</p>
+              <div class="causeMetaGrid mt-6">
+                <div class="causeMetaCard">
+                  <span>Recaudado</span>
+                  <strong id="cause-raised-altar">$980</strong>
+                </div>
+                <div class="causeMetaCard">
+                  <span>Meta</span>
+                  <strong id="cause-goal-altar">$1,800</strong>
+                </div>
+              </div>
+              <div class="mt-6">
+                <div class="progressTrack">
+                  <div id="cause-progress-altar" class="progressFill w-[54%]"></div>
+                </div>
+              </div>
+              <button type="button" class="mt-6 inline-flex items-center justify-center rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2" data-select-cause="altar">Donar a este espacio</button>
             </div>
           </div>
-        </div>
+        </article>
+
+        <article class="causeCard overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-white shadow-[0_20px_60px_rgba(82,46,39,0.08)]" data-cause-card="community">
+          <div class="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
+            <img src="imgs/iglecia3.jpg" alt="Capilla comunitaria" class="causeImage" />
+            <div class="p-7 sm:p-8">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <p class="sectionEyebrow">Espacio 03</p>
+                <span id="cause-status-community" class="causeStatus">En progreso</span>
+              </div>
+              <h2 class="sectionTitle mt-4 text-[2rem]">Capilla comunitaria</h2>
+              <p class="sectionLead mt-4">Adecuamos un espacio de encuentro, ayuda social y oración abierta para la comunidad del barrio.</p>
+              <div class="causeMetaGrid mt-6">
+                <div class="causeMetaCard">
+                  <span>Recaudado</span>
+                  <strong id="cause-raised-community">$760</strong>
+                </div>
+                <div class="causeMetaCard">
+                  <span>Meta</span>
+                  <strong id="cause-goal-community">$1,500</strong>
+                </div>
+              </div>
+              <div class="mt-6">
+                <div class="progressTrack">
+                  <div id="cause-progress-community" class="progressFill w-[51%]"></div>
+                </div>
+              </div>
+              <button type="button" class="mt-6 inline-flex items-center justify-center rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2" data-select-cause="community">Donar a este espacio</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="causeCard overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-white shadow-[0_20px_60px_rgba(82,46,39,0.08)]" data-cause-card="access">
+          <div class="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
+            <img src="imgs/Iglecia5.webp" alt="Accesos e iluminación de la iglesia" class="causeImage" />
+            <div class="p-7 sm:p-8">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <p class="sectionEyebrow">Espacio 04</p>
+                <span id="cause-status-access" class="causeStatus">En progreso</span>
+              </div>
+              <h2 class="sectionTitle mt-4 text-[2rem]">Accesos e iluminación interior</h2>
+              <p class="sectionLead mt-4">Mejoras de entrada, iluminación cálida y recorrido más cómodo para todas las personas que visitan el templo.</p>
+              <div class="causeMetaGrid mt-6">
+                <div class="causeMetaCard">
+                  <span>Recaudado</span>
+                  <strong id="cause-raised-access">$460</strong>
+                </div>
+                <div class="causeMetaCard">
+                  <span>Meta</span>
+                  <strong id="cause-goal-access">$1,200</strong>
+                </div>
+              </div>
+              <div class="mt-6">
+                <div class="progressTrack">
+                  <div id="cause-progress-access" class="progressFill w-[38%]"></div>
+                </div>
+              </div>
+              <button type="button" class="mt-6 inline-flex items-center justify-center rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2" data-select-cause="access">Donar a este espacio</button>
+            </div>
+          </div>
+        </article>
       </div>
 
-      <aside class="rounded-3xl bg-white p-6 shadow-sm border border-[var(--border-soft)]">
-        <h2 class="text-2xl font-semibold text-color1">Formulario de donación</h2>
-        <form id="donationForm" class="mt-6 space-y-4">
-          <label class="block text-sm font-medium text-color2">Monto a donar</label>
-          <div class="rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1">
-            <span class="text-lg font-semibold">$</span>
-            <input id="donationAmount" type="number" min="10" step="5" value="50" class="w-full bg-transparent text-lg font-semibold outline-none" />
-          </div>
+      <aside class="space-y-6 lg:sticky lg:top-28">
+        <div class="rounded-[2rem] border border-[var(--border-soft)] bg-white p-7 shadow-[0_20px_60px_rgba(82,46,39,0.08)]">
+          <p class="sectionEyebrow">Formulario de donación</p>
+          <h2 class="sectionTitle mt-4 text-[2rem]">Aporta a una causa concreta</h2>
+          <p class="sectionLead mt-4">Selecciona el espacio que quieres impulsar, indica el monto y el total recaudado se actualizará automáticamente al confirmar.</p>
 
-          <div>
-            <label class="block text-sm font-medium text-color2">Número de tarjeta</label>
-            <input id="cardNumber" type="text" pattern="\d*" maxlength="19" placeholder="1234 5678 9012 3456" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
-          </div>
-
-          <div class="grid gap-4 sm:grid-cols-2">
+          <form id="donationForm" class="mt-6 space-y-4">
             <div>
-              <label class="block text-sm font-medium text-color2">Fecha (MM/AA)</label>
-              <input id="expiryDate" type="text" maxlength="5" placeholder="08/27" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
+              <label class="block text-sm font-medium text-color2">Destino de la donación</label>
+              <select id="donationCause" class="modernInput mt-2 w-full">
+                <option value="roof">Techo principal y estructura</option>
+                <option value="altar">Altar y área de oración</option>
+                <option value="community">Capilla comunitaria</option>
+                <option value="access">Accesos e iluminación interior</option>
+              </select>
             </div>
+
             <div>
-              <label class="block text-sm font-medium text-color2">CVV</label>
-              <input id="cvv" type="text" maxlength="3" placeholder="123" class="mt-2 w-full rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1 outline-none transition focus:border-[var(--color4)] focus:ring-2 focus:ring-[rgba(213,152,116,0.2)]" />
+              <label class="block text-sm font-medium text-color2">Monto a donar</label>
+              <div class="mt-2 flex items-center gap-3 rounded-3xl border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 text-color1">
+                <span class="text-lg font-semibold">$</span>
+                <input id="donationAmount" type="number" min="10" step="5" value="50" class="w-full bg-transparent text-lg font-semibold outline-none" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-color2">Número de tarjeta</label>
+              <input id="cardNumber" type="text" maxlength="19" placeholder="1234 5678 9012 3456" class="modernInput mt-2 w-full" />
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="block text-sm font-medium text-color2">Fecha (MM/AA)</label>
+                <input id="expiryDate" type="text" maxlength="5" placeholder="08/27" class="modernInput mt-2 w-full" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-color2">CVV</label>
+                <input id="cvv" type="text" maxlength="3" placeholder="123" class="modernInput mt-2 w-full" />
+              </div>
+            </div>
+
+            <button type="submit" class="w-full rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2">Simular Donación</button>
+            <p id="donationFeedback" class="min-h-[1.5rem] text-sm text-[#2c7a2a]"></p>
+          </form>
+        </div>
+
+        <div class="rounded-[2rem] border border-[var(--border-soft)] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(249,238,230,0.8))] p-7 shadow-[0_20px_60px_rgba(82,46,39,0.08)]">
+          <p class="sectionEyebrow">Modo seguro</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div class="metricCard">
+              <span>Tarjeta</span>
+              <strong>16</strong>
+              <p>Dígitos necesarios para validar la prueba.</p>
+            </div>
+            <div class="metricCard">
+              <span>Expiración</span>
+              <strong>MM/AA</strong>
+              <p>La fecha debe ser futura.</p>
+            </div>
+            <div class="metricCard">
+              <span>CVV</span>
+              <strong>3</strong>
+              <p>Código de seguridad de tres números.</p>
+            </div>
+            <div class="metricCard">
+              <span>Protección</span>
+              <strong>Demo</strong>
+              <p>No se guardan datos reales en esta vista.</p>
             </div>
           </div>
-
-          <button type="submit" class="w-full rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2">Simular Donación</button>
-          <p id="donationFeedback" class="min-h-[1.5rem] text-sm text-[#2c7a2a]"></p>
-        </form>
+        </div>
       </aside>
     </section>
   </main>
+  <script src="js/main.js"></script>
 </body>
 </html>
