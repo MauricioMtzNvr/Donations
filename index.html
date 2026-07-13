@@ -24,83 +24,125 @@
   </header>
 
   <main>
-    <section id="heroCarousel" class="relative h-[calc(100vh-76px)] overflow-hidden">
-      <div class="absolute inset-0">
-        <div class="carouselSlide slide-visible relative h-full w-full bg-cover bg-center" style="background-image: url('imgs/2CepilloElectronicoAlmudena-ArchiMadrid-22112018.webp');">
-          <div class="absolute inset-0"></div>
-          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white carouselCaption">
-            <div class="carouselMeta">
-              <span class="text-xs uppercase tracking-[0.32em] text-white/85">Restauración del templo</span>
-            </div>
-            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Donaciones para renovar el templo y la comunidad.</h1>
-            <p class="max-w-2xl text-base leading-7 text-white/80">Historias reales de apoyo, con imágenes locales y una presentación moderna.</p>
+    <section id="heroCarousel" class="relative isolate w-full overflow-hidden bg-[#120d0b] px-4 py-4 sm:px-6 lg:px-8">
+      <div class="carouselAmbient"></div>
+      <div class="relative mx-auto h-full w-full max-w-7xl">
+        <div class="carouselSlide slide-visible">
+          <img src="imgs/iglecia1.jpg" alt="Iglesia restaurada" class="carouselBg" />
+          <div class="carouselOverlay"></div>
+          <div class="carouselSeal">
+            <img src="imgs/persona1.jpg" alt="Ana, donante" class="carouselSealImage" />
+            <span class="carouselSealLabel">Ana Ruiz</span>
+            <span class="carouselSealSmall">Donante</span>
           </div>
-          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full border border-white/20 bg-white/12 p-3 shadow-2xl backdrop-blur-xl">
-            <img src="imgs/nina-argentona-jugando-con-burbujas.jpeg" alt="Voluntaria" class="h-14 w-14 rounded-full border border-white object-cover" />
-            <div class="text-left">
-              <p class="text-sm font-semibold text-white">María, voluntaria</p>
-              <p class="text-xs text-white/70">Coordina la campaña social</p>
-            </div>
-          </div>
-        </div>
-        <div class="carouselSlide slide-hidden relative h-full w-full bg-cover bg-center" style="background-image: url('imgs/images.jfif');">
-          <div class="absolute inset-0"></div>
-          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white carouselCaption">
-            <div class="carouselMeta">
-              <span class="text-xs uppercase tracking-[0.32em] text-white/85">Evidencia visual</span>
-            </div>
-            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Transparencia con imágenes locales.</h1>
-            <p class="max-w-2xl text-base leading-7 text-white/80">Todo el contenido es local y el diseño se siente moderno y confiable.</p>
-          </div>
-          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full border border-white/20 bg-white/12 p-3 shadow-2xl backdrop-blur-xl">
-            <img src="imgs/2CepilloElectronicoAlmudena-ArchiMadrid-22112018.webp" alt="Líder comunitario" class="h-14 w-14 rounded-full border border-white object-cover" />
-            <div class="text-left">
-              <p class="text-sm font-semibold text-white">Pedro, líder</p>
-              <p class="text-xs text-white/70">Comparte los avances</p>
+          <div class="carouselContentWrap">
+            <div class="carouselCard">
+              <p class="carouselEyebrow">Donación destacada</p>
+              <h1 class="carouselTitle">Ana renovó la fachada y la luz principal.</h1>
+              <p class="carouselText">Su aporte ayudó a reforzar el acceso y a mejorar la presencia del templo en cada celebración.</p>
+              <div class="carouselStats">
+                <div class="carouselStat">
+                  <span>Monto</span>
+                  <strong>$1,250</strong>
+                </div>
+                <div class="carouselStat">
+                  <span>Destino</span>
+                  <strong>Fachada</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="carouselSlide slide-hidden relative h-full w-full bg-cover bg-center" style="background-image: url('imgs/images1.jfif');">
-          <div class="absolute inset-0"></div>
-          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white carouselCaption">
-            <div class="carouselMeta">
-              <span class="text-xs uppercase tracking-[0.32em] text-white/85">Impacto comunitario</span>
-            </div>
-            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Apoyo directo a familias de fe.</h1>
-            <p class="max-w-2xl text-base leading-7 text-white/80">Documentamos cada acción con imágenes locales y un enfoque responsable.</p>
+
+        <div class="carouselSlide slide-hidden">
+          <img src="imgs/iglecia2.jpg" alt="Templo y comunidad" class="carouselBg" />
+          <div class="carouselOverlay"></div>
+          <div class="carouselSeal">
+            <img src="imgs/persona2.jpg" alt="Carlos, donante" class="carouselSealImage" />
+            <span class="carouselSealLabel">Carlos Pérez</span>
+            <span class="carouselSealSmall">Donante</span>
           </div>
-          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full border border-white/20 bg-white/12 p-3 shadow-2xl backdrop-blur-xl">
-            <img src="imgs/2CepilloElectronicoAlmudena-ArchiMadrid-22112018.webp" alt="Donante" class="h-14 w-14 rounded-full border border-white object-cover" />
-            <div class="text-left">
-              <p class="text-sm font-semibold text-white">Sofía, donante</p>
-              <p class="text-xs text-white/70">Apoya la obra social</p>
+          <div class="carouselContentWrap">
+            <div class="carouselCard">
+              <p class="carouselEyebrow">Aporte comunitario</p>
+              <h1 class="carouselTitle">Carlos recuperó el altar y el espacio de oración.</h1>
+              <p class="carouselText">La imagen del templo queda al fondo mientras el panel transmite el impacto real de su ayuda.</p>
+              <div class="carouselStats">
+                <div class="carouselStat">
+                  <span>Monto</span>
+                  <strong>$980</strong>
+                </div>
+                <div class="carouselStat">
+                  <span>Destino</span>
+                  <strong>Altar</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="carouselSlide slide-hidden relative h-full w-full bg-cover bg-center" style="background-image: url('imgs/nina-argentona-jugando-con-burbujas.jpeg');">
-          <div class="absolute inset-0"></div>
-          <div class="absolute inset-x-0 bottom-16 mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-center text-white carouselCaption">
-            <div class="carouselMeta">
-              <span class="text-xs uppercase tracking-[0.32em] text-white/85">Visión comunitaria</span>
-            </div>
-            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Un proyecto colectivo de fe.</h1>
-            <p class="max-w-2xl text-base leading-7 text-white/80">Tus donaciones impulsan obras visibles, reales y cercanas.</p>
+
+        <div class="carouselSlide slide-hidden">
+          <img src="imgs/iglecia3.jpg" alt="Interior de iglesia" class="carouselBg" />
+          <div class="carouselOverlay"></div>
+          <div class="carouselSeal">
+            <img src="imgs/persona3.jpg" alt="Lucía, donante" class="carouselSealImage" />
+            <span class="carouselSealLabel">Lucía Gómez</span>
+            <span class="carouselSealSmall">Donante</span>
           </div>
-          <div class="absolute right-6 top-6 flex items-center gap-4 rounded-full border border-white/20 bg-white/12 p-3 shadow-2xl backdrop-blur-xl">
-            <img src="imgs/2CepilloElectronicoAlmudena-ArchiMadrid-22112018.webp" alt="Voluntario" class="h-14 w-14 rounded-full border border-white object-cover" />
-            <div class="text-left">
-              <p class="text-sm font-semibold text-white">Andrés, voluntario</p>
-              <p class="text-xs text-white/70">Comparte historias de la iglesia</p>
+          <div class="carouselContentWrap">
+            <div class="carouselCard">
+              <p class="carouselEyebrow">Donación visible</p>
+              <h1 class="carouselTitle">Lucía modernizó los accesos del templo.</h1>
+              <p class="carouselText">El recuadro de contenido entra sobre la imagen con contraste limpio y un acabado vanguardista.</p>
+              <div class="carouselStats">
+                <div class="carouselStat">
+                  <span>Monto</span>
+                  <strong>$1,600</strong>
+                </div>
+                <div class="carouselStat">
+                  <span>Destino</span>
+                  <strong>Accesos</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carouselSlide slide-hidden">
+          <img src="imgs/Iglecia5.webp" alt="Iglesia iluminada" class="carouselBg" />
+          <div class="carouselOverlay"></div>
+          <div class="carouselSeal">
+            <img src="imgs/persona4.jpg" alt="Miguel, donante" class="carouselSealImage" />
+            <span class="carouselSealLabel">Miguel Torres</span>
+            <span class="carouselSealSmall">Donante</span>
+          </div>
+          <div class="carouselContentWrap">
+            <div class="carouselCard">
+              <p class="carouselEyebrow">Impacto local</p>
+              <h1 class="carouselTitle">Miguel impulsó la luz cálida del interior.</h1>
+              <p class="carouselText">La fotografía del templo queda como fondo y el bloque de texto emerge con una lectura clara.</p>
+              <div class="carouselStats">
+                <div class="carouselStat">
+                  <span>Monto</span>
+                  <strong>$2,100</strong>
+                </div>
+                <div class="carouselStat">
+                  <span>Destino</span>
+                  <strong>Interior</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="carouselControls absolute inset-x-0 bottom-8 px-6">
-        <button type="button" class="carouselDot active" data-index="0"></button>
-        <button type="button" class="carouselDot" data-index="1"></button>
-        <button type="button" class="carouselDot" data-index="2"></button>
-        <button type="button" class="carouselDot" data-index="3"></button>
+      <div class="carouselControls absolute inset-x-0 bottom-6 z-20 flex justify-center px-6">
+        <div class="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 shadow-2xl backdrop-blur-xl">
+          <button type="button" class="carouselDot active" data-index="0" aria-label="Ver donación de Ana"></button>
+          <button type="button" class="carouselDot" data-index="1" aria-label="Ver donación de Carlos"></button>
+          <button type="button" class="carouselDot" data-index="2" aria-label="Ver donación de Lucía"></button>
+          <button type="button" class="carouselDot" data-index="3" aria-label="Ver donación de Miguel"></button>
+        </div>
       </div>
     </section>
 

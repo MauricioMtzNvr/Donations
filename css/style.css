@@ -19,6 +19,21 @@ body {
   background: linear-gradient(180deg, #fbf3ed 0%, #fffaf7 100%);
 }
 
+#heroCarousel {
+  position: relative;
+  height: clamp(32rem, calc(100vh - 76px), 54rem);
+}
+
+#heroCarousel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(244, 209, 154, 0.12), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(153, 98, 81, 0.16), transparent 38%);
+  pointer-events: none;
+}
+
 .text-color1 { color: var(--color1); }
 .text-color2 { color: var(--color2); }
 .text-color3 { color: var(--color3); }
@@ -71,27 +86,201 @@ input[type='file'] {
   color: var(--color1);
 }
 
+.carouselAmbient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(18, 13, 11, 0.78) 0%, rgba(18, 13, 11, 0.34) 46%, rgba(18, 13, 11, 0.72) 100%),
+    radial-gradient(circle at 20% 20%, rgba(244, 209, 154, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 30%, rgba(213, 152, 116, 0.14), transparent 24%);
+  pointer-events: none;
+}
+
 .carouselSlide {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transform: scale(1.03);
-  transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
-  filter: brightness(0.82);
+  transform: scale(1.02);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  overflow: hidden;
+  border-radius: 2rem;
 }
 
 .carouselSlide::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 8, 7, 0.55) 0%, rgba(10, 8, 7, 0.2) 35%, rgba(10, 8, 7, 0.35) 100%);
+  background: linear-gradient(180deg, rgba(10, 8, 7, 0.08) 0%, rgba(10, 8, 7, 0.12) 40%, rgba(10, 8, 7, 0.28) 100%);
+}
+
+.carouselBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.96) contrast(1.02);
+}
+
+.carouselOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(12, 9, 8, 0.74) 0%, rgba(12, 9, 8, 0.36) 45%, rgba(12, 9, 8, 0.58) 100%),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 56%);
+}
+
+.carouselContentWrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.25rem 4.5rem;
+}
+
+.carouselCard {
+  width: min(100%, 44rem);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 2.1rem;
+  background: linear-gradient(180deg, rgba(255, 250, 246, 0.84) 0%, rgba(249, 238, 230, 0.72) 100%);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px rgba(14, 9, 8, 0.24);
+  padding: clamp(1.4rem, 2.8vw, 2.4rem);
+  text-align: center;
+  color: var(--color1);
+}
+
+.carouselCopy {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+}
+
+.carouselEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  background: rgba(82, 46, 39, 0.08);
+  padding: 0.7rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color2);
+}
+
+.carouselEyebrow::before {
+  content: '';
+  height: 0.55rem;
+  width: 0.55rem;
+  border-radius: 999px;
+  background: var(--color4);
+  box-shadow: 0 0 0 5px rgba(213, 152, 116, 0.18);
+}
+
+.carouselTitle {
+  margin-top: 1.1rem;
+  font-size: clamp(2rem, 4.8vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--color1);
+}
+
+.carouselText {
+  margin-top: 1rem;
+  margin-inline: auto;
+  max-width: 34rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color2);
+}
+
+.carouselSeal {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 2;
+  display: flex;
+  height: 8.2rem;
+  width: 8.2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(82, 46, 39, 0.35);
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.94) 0%, rgba(248, 233, 225, 0.78) 62%, rgba(233, 209, 198, 0.9) 100%);
+  box-shadow: 0 16px 48px rgba(53, 28, 22, 0.18);
+  text-align: center;
+  color: var(--color1);
+}
+
+.carouselSealImage {
+  height: 3.65rem;
+  width: 3.65rem;
+  border-radius: 999px;
+  border: 3px solid rgba(82, 46, 39, 0.12);
+  object-fit: cover;
+}
+
+.carouselSealLabel {
+  max-width: 6.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.carouselSealSmall {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color3);
+}
+
+.carouselStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carouselStat {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(82, 46, 39, 0.09);
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1rem 1.1rem;
+  box-shadow: 0 10px 30px rgba(84, 49, 40, 0.06);
+}
+
+.carouselStat span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color3);
+}
+
+.carouselStat strong {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.25rem;
+  color: var(--color1);
 }
 
 .slide-visible {
   opacity: 1;
   transform: scale(1);
   z-index: 1;
-  filter: brightness(1);
 }
 
 .slide-hidden {
@@ -100,29 +289,13 @@ input[type='file'] {
   z-index: 0;
 }
 
-.carouselCaption {
-  backdrop-filter: blur(18px);
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.14);
-}
-
-.carouselMeta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 0.85rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
 .carouselDot {
-  height: 0.75rem;
-  width: 0.75rem;
+  height: 0.85rem;
+  width: 0.85rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .carouselDot.active {
@@ -135,6 +308,51 @@ input[type='file'] {
   justify-content: center;
   gap: 0.75rem;
   z-index: 10;
+}
+
+@media (max-width: 1024px) {
+  #heroCarousel {
+    height: 44rem;
+  }
+
+  .carouselSeal {
+    top: 1rem;
+    right: 1rem;
+    height: 6.9rem;
+    width: 6.9rem;
+  }
+
+  .carouselContentWrap {
+    padding: 4.5rem 1rem 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #heroCarousel {
+    height: 38rem;
+  }
+
+  .carouselSeal {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .carouselTitle {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .carouselText {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .carouselStats {
+    grid-template-columns: 1fr;
+  }
+
+  .carouselContentWrap {
+    padding: 3.8rem 0.75rem 3.5rem;
+  }
 }
 
 #donationPanel,
