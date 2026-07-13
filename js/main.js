@@ -23,6 +23,19 @@ let currentGoal = 7500;
 let activeSlide = 0;
 let carouselInterval = null;
 
+// Ensure slides have predictable starting styles (helps when CSS or build tools alter ordering)
+if (carouselSlides.length) {
+  carouselSlides.forEach((slide, i) => {
+    slide.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+    slide.style.willChange = 'opacity, transform';
+    slide.style.opacity = i === 0 ? '1' : '0';
+    slide.style.transform = i === 0 ? 'scale(1)' : 'scale(1.03)';
+    slide.style.zIndex = i === 0 ? '2' : '1';
+    slide.classList.toggle('slide-visible', i === 0);
+    slide.classList.toggle('slide-hidden', i !== 0);
+  });
+}
+
 const roles = {
   donor: {
     show: [donationPanel],
@@ -92,10 +105,23 @@ function showMessage(element, message, success = true) {
 
 function goToSlide(index) {
   if (!carouselSlides.length) return;
-  activeSlide = index % carouselSlides.length;
+  const newIndex = ((index % carouselSlides.length) + carouselSlides.length) % carouselSlides.length;
+  activeSlide = newIndex;
+  console.log('goToSlide called, newIndex=', newIndex);
   carouselSlides.forEach((slide, i) => {
-    slide.classList.toggle('slide-visible', i === activeSlide);
-    slide.classList.toggle('slide-hidden', i !== activeSlide);
+    if (i === activeSlide) {
+      slide.style.opacity = '1';
+      slide.style.transform = 'scale(1)';
+      slide.style.zIndex = '2';
+      slide.classList.add('slide-visible');
+      slide.classList.remove('slide-hidden');
+    } else {
+      slide.style.opacity = '0';
+      slide.style.transform = 'scale(1.03)';
+      slide.style.zIndex = '1';
+      slide.classList.remove('slide-visible');
+      slide.classList.add('slide-hidden');
+    }
   });
   carouselDots.forEach((dot, i) => {
     dot.classList.toggle('active', i === activeSlide);
@@ -104,9 +130,13 @@ function goToSlide(index) {
 
 function startCarousel() {
   if (!carouselSlides.length) return;
+  if (carouselInterval) {
+    clearInterval(carouselInterval);
+  }
+  console.log('startCarousel: starting interval for', carouselSlides.length, 'slides');
   carouselInterval = setInterval(() => {
-    goToSlide((activeSlide + 1) % carouselSlides.length);
-  }, 6000);
+    goToSlide(activeSlide + 1);
+  }, 3000);
 }
 
 function setupCarouselControls() {
