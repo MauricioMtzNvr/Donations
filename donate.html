@@ -19,6 +19,9 @@
         <a href="index.html" class="nav-link rounded-full px-4 py-2">Inicio</a>
         <a href="donate.html" class="nav-link rounded-full bg-[var(--color5)] px-4 py-2 text-color1">Donar</a>
         <a href="index.html#contact" class="nav-link rounded-full px-4 py-2">Contacto</a>
+        <a href="admin-login.html" class="adminAccessBtn">
+          <i class="fa-solid fa-user-shield"></i> Panel admin
+        </a>
       </nav>
     </div>
   </header>
@@ -200,6 +203,11 @@
 
           <form id="donationForm" class="mt-6 space-y-4">
             <div>
+              <label class="block text-sm font-medium text-color2">Nombre completo</label>
+              <input id="donorName" type="text" placeholder="Tu nombre" class="modernInput mt-2 w-full" />
+            </div>
+
+            <div>
               <label class="block text-sm font-medium text-color2">Destino de la donación</label>
               <select id="donationCause" class="modernInput mt-2 w-full">
                 <option value="roof">Techo principal y estructura</option>
@@ -266,6 +274,7 @@
       </aside>
     </section>
   </main>
+  <script src="js/store.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
