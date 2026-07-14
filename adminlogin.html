@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso administrador | Iglesia Solidaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2d0b1fac5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen bg-[var(--bg-soft)] text-color1 font-sans">
+  <header class="sticky top-0 z-50 border-b border-[var(--border-soft)] bg-white/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <a href="index.html" class="text-lg font-semibold tracking-tight text-color1">Iglesia Solidaria</a>
+      <nav class="flex flex-wrap items-center gap-3 text-sm font-semibold text-color2">
+        <a href="index.html" class="nav-link rounded-full px-4 py-2">Inicio</a>
+        <a href="donate.html" class="nav-link rounded-full px-4 py-2">Donar</a>
+        <a href="index.html#contact" class="nav-link rounded-full px-4 py-2">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto flex min-h-[calc(100vh-88px)] max-w-6xl items-center px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid w-full gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="loginSidePanel rounded-[2rem] border border-[var(--border-soft)] bg-white/85 p-7 shadow-[0_24px_80px_rgba(82,46,39,0.08)] backdrop-blur-md sm:p-10">
+        <p class="sectionEyebrow">Acceso restringido</p>
+        <h1 class="sectionTitle mt-4 text-[2.2rem]">Panel de control de donaciones</h1>
+        <p class="sectionLead mt-4">Este espacio es únicamente para los responsables de la iglesia. Aquí podrás revisar cada donación recibida, ver quién la hizo y aprobarla o rechazarla.</p>
+        <div class="mt-6 space-y-3">
+          <div class="miniCard">
+            <h3>Revisión</h3>
+            <p>Consulta el detalle de cada aporte: donante, causa, monto y fecha.</p>
+          </div>
+          <div class="miniCard">
+            <h3>Aprobar o rechazar</h3>
+            <p>Marca cada donación como aprobada o devuélvela si algo no cuadra.</p>
+          </div>
+        </div>
+        <div class="demoHintBox mt-6">
+          <p class="demoHintTitle"><i class="fa-solid fa-circle-info"></i> Modo demostración</p>
+          <p class="mt-2 text-sm leading-6">Este proyecto no tiene un servidor real detrás, así que el acceso se simula en el navegador. Usa estas credenciales de prueba:</p>
+          <p class="mt-3 text-sm"><strong>Usuario:</strong> admin</p>
+          <p class="text-sm"><strong>Contraseña:</strong> iglesia2026</p>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-[var(--border-soft)] bg-white p-7 shadow-[0_20px_60px_rgba(82,46,39,0.08)] sm:p-10">
+        <div class="flex items-center gap-3">
+          <span class="loginIconBadge"><i class="fa-solid fa-user-shield"></i></span>
+          <div>
+            <p class="sectionEyebrow">Iniciar sesión</p>
+            <h2 class="sectionTitle mt-2 text-[1.7rem]">Ingresa al panel</h2>
+          </div>
+        </div>
+
+        <form id="adminLoginForm" class="mt-8 space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-color2">Usuario</label>
+            <input id="adminUsername" type="text" autocomplete="username" placeholder="admin" class="modernInput mt-2 w-full" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-color2">Contraseña</label>
+            <input id="adminPassword" type="password" autocomplete="current-password" placeholder="••••••••" class="modernInput mt-2 w-full" />
+          </div>
+          <button type="submit" class="w-full rounded-3xl bg-color1 px-5 py-3 text-sm font-semibold text-white transition hover:bg-color2">Entrar al panel</button>
+          <p id="adminLoginFeedback" class="min-h-[1.5rem] text-sm text-[#2c7a2a]"></p>
+        </form>
+
+        <a href="index.html" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-color3 transition hover:text-color1">
+          <i class="fa-solid fa-arrow-left"></i> Volver al sitio
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/store.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
